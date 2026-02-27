@@ -11,7 +11,7 @@ import {
     Filter,
     Sparkles
 } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { cn, cleanJobTitle } from '@/lib/utils';
 
 interface Job {
     id: number;
@@ -81,11 +81,7 @@ export default function SearchPage() {
                                     <Briefcase className="w-7 h-7 text-foreground group-hover:text-white transition-colors" />
                                 </div>
                                 <div className="flex-1">
-                                    <h3 className="text-lg font-black text-foreground leading-snug group-hover:text-primary transition-colors">{job.job_title}</h3>
-                                    <div className="flex items-center gap-2 mt-1">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                                        <p className="text-[10px] font-black uppercase tracking-widest text-primary/50">Poste Ouvert</p>
-                                    </div>
+                                    <h3 className="text-lg font-black text-foreground leading-snug group-hover:text-primary transition-colors">{cleanJobTitle(job.job_title)}</h3>
                                 </div>
                             </div>
 
@@ -97,11 +93,7 @@ export default function SearchPage() {
                                 ))}
                             </div>
 
-                            <div className="flex items-center justify-between pt-10 mt-auto border-t border-border relative z-10">
-                                <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-foreground opacity-60">
-                                    <Filter className="w-3.5 h-3.5" />
-                                    Full-Remote
-                                </div>
+                            <div className="flex items-center justify-end pt-10 mt-auto border-t border-border relative z-10">
                                 <div className="w-10 h-10 rounded-full bg-accent/40 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
                                     <ChevronRight className="w-5 h-5" />
                                 </div>

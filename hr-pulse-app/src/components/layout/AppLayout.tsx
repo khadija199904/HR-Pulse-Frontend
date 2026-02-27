@@ -4,7 +4,16 @@ import React from 'react';
 import Sidebar from './Sidebar';
 import Navbar from './Navbar';
 
+import { usePathname } from 'next/navigation';
+
 export default function AppLayout({ children }: { children: React.ReactNode }) {
+    const pathname = usePathname();
+    const isAuthPage = pathname === '/login' || pathname === '/register';
+
+    if (isAuthPage) {
+        return <div className="min-h-screen bg-background">{children}</div>;
+    }
+
     return (
         <div className="min-h-screen bg-background">
             <Sidebar />

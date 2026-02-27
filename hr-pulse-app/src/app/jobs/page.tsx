@@ -12,6 +12,7 @@ import {
     Database,
     ArrowRight
 } from 'lucide-react';
+import { cn, cleanJobTitle } from '@/lib/utils';
 
 export default function JobsDirectoryPage() {
     const [titles, setTitles] = useState<string[]>([]);
@@ -82,16 +83,10 @@ export default function JobsDirectoryPage() {
                                 </div>
 
                                 <h3 className="font-black text-foreground text-sm group-hover:text-primary transition-colors line-clamp-2 leading-relaxed h-10 mb-8">
-                                    {title}
+                                    {cleanJobTitle(title)}
                                 </h3>
 
-                                <div className="mt-auto pt-8 border-t border-border/50 flex items-center justify-between relative z-10">
-                                    <div className="flex items-center gap-2.5 text-[10px] font-black uppercase tracking-[0.2em] text-foreground opacity-50">
-                                        <div className="w-2 h-2 rounded-full bg-accent" />
-                                        Vérifié
-                                    </div>
-                                    <span className="text-[10px] font-bold text-foreground opacity-20">REF-{i + 1000}</span>
-                                </div>
+
                             </div>
                         ))}
                     </div>

@@ -1,4 +1,4 @@
-name: HR Pulse Frontend CI-CD
+name: HR Pulse Frontend ci-cd
 
 on:
   push:

@@ -9,6 +9,9 @@ on:
 jobs:
   test-and-build-check:
     runs-on: self-hosted
+    defaults:
+      run:
+        working-directory: hr-pulse-app
     steps:
       - name: Checkout du code
         uses: actions/checkout@v4

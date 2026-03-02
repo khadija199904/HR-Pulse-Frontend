@@ -28,7 +28,6 @@ export default function LoginPage() {
 
         try {
             const res = await api.login({ email, password });
-            // On success, set cookie (demo implementation uses cookies)
             document.cookie = `token=${res.access_token}; path=/; max-age=86400`;
             router.push('/dashboard');
         } catch (err: any) {
@@ -100,7 +99,7 @@ export default function LoginPage() {
                         >
                             {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : (
                                 <>
-                                    Connecter au Cloud
+                                    Connecter
                                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                 </>
                             )}

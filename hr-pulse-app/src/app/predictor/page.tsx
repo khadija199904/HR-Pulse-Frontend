@@ -27,7 +27,7 @@ export default function PredictorPage() {
     type_of_ownership: "Company - Private",
     industry: "IT Services",
     sector: "Information Technology",
-    revenue: "$50 to $100 million (USD)"
+    revenue: "$50 to $100 million"
 });
 
     const [prediction, setPrediction] = useState<number | null>(null);
@@ -162,9 +162,9 @@ export default function PredictorPage() {
                                 </div>
 
                                 <div className="group">
-                                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground block mb-4 ml-2 opacity-50">Revenu</label>
+                                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground block mb-4 ml-2 opacity-50">Revenu (USD)</label>
                                     <input
-                                        className="w-full px-10 py-6 bg-muted/40 border-2 border-transparent rounded-[2.5rem] text-base font-black focus:bg-white focus:border-primary/20 outline-none transition-all"
+                                        className="w-full px-10 py-6 bg-muted/42 border-2 border-transparent rounded-[2.5rem] text-base font-black focus:bg-white focus:border-primary/20 outline-none transition-all"
                                         value={formData.revenue}
                                         onChange={(e) => setFormData({ ...formData, revenue: e.target.value })}
                                     />

@@ -34,9 +34,8 @@ export default function Navbar() {
 
                 <div className="flex items-center gap-5 pl-8 border-l border-border/50 h-10">
                     <div className="text-right">
-                        {/* K.Elabbioui*/}
                         <p className="text-sm font-black text-foreground leading-none">K. Elabbioui</p>
-                        <p className="text-[10px] font-bold text-primary tracking-widest uppercase mt-1">Directeur RH</p>
+                        <p className="text-[10px] font-bold text-primary tracking-widest uppercase mt-1">Responsable RH</p>
                     </div>
                     <div className="w-12 h-12 rounded-[1.25rem] bg-secondary flex items-center justify-center text-primary font-black text-sm shadow-sm ring-1 ring-white border border-secondary hover:scale-105 transition-transform cursor-pointer overflow-hidden relative group">
                         <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-10 transition-opacity" />

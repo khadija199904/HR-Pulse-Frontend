@@ -15,15 +15,20 @@ import {
 import { cn } from '@/lib/utils';
 
 export default function PredictorPage() {
-    const [formData, setFormData] = useState({
-        job_title: "Développeur Fullstack",
-        job_description: "Expert React et Node.js",
-        rating: 4.5,
-        job_state: "Paris",
-        sector: "Tech",
-        location: "Paris, France",
-        skills: ["React", "Node.js", "TypeScript"]
-    });
+   const [formData, setFormData] = useState({
+    job_title: "Data Scientist",
+    job_description: "Nous recherchons un Data Scientist expérimenté en Python, SQL et Machine Learning.",
+    rating: 4.5,
+    company_name: "Tech Solutions",
+    location: "Paris, FR",
+    headquarters: "Paris, FR",
+    size: "201 to 500 employees",
+    founded: 2010,
+    type_of_ownership: "Company - Private",
+    industry: "IT Services",
+    sector: "Information Technology",
+    revenue: "$50 to $100 million (USD)"
+});
 
     const [prediction, setPrediction] = useState<number | null>(null);
     const [loading, setLoading] = useState(false);
@@ -64,10 +69,11 @@ export default function PredictorPage() {
 
                         <div className="space-y-10 relative z-10">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                                {/* --- SECTION POSTE (job_title, sector, location) --- */}
                                 <div className="md:col-span-2 group">
                                     <label className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground block mb-4 ml-2 opacity-50">Intitulé du Poste</label>
                                     <input
-                                        className="w-full px-10 py-6 bg-muted/40 border-2 border-transparent rounded-[2.5rem] text-base font-black focus:bg-white focus:border-primary/20 outline-none transition-all placeholder:text-muted-foreground"
+                                        className="w-full px-10 py-6 bg-muted/40 border-2 border-transparent rounded-[2.5rem] text-base font-black focus:bg-white focus:border-primary/20 outline-none transition-all"
                                         value={formData.job_title}
                                         onChange={(e) => setFormData({ ...formData, job_title: e.target.value })}
                                     />
@@ -81,6 +87,7 @@ export default function PredictorPage() {
                                         onChange={(e) => setFormData({ ...formData, sector: e.target.value })}
                                     />
                                 </div>
+
                                 <div className="group">
                                     <label className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground block mb-4 ml-2 opacity-50">Localisation</label>
                                     <input
@@ -90,10 +97,84 @@ export default function PredictorPage() {
                                     />
                                 </div>
 
+                                {/* --- SECTION ENTREPRISE --- */}
+                                <div className="group">
+                                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground block mb-4 ml-2 opacity-50">Nom de l'entreprise</label>
+                                    <input
+                                        className="w-full px-10 py-6 bg-muted/40 border-2 border-transparent rounded-[2.5rem] text-base font-black focus:bg-white focus:border-primary/20 outline-none transition-all"
+                                        value={formData.company_name}
+                                        onChange={(e) => setFormData({ ...formData, company_name: e.target.value })}
+                                    />
+                                </div>
+
+                                <div className="group">
+                                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground block mb-4 ml-2 opacity-50">Industrie</label>
+                                    <input
+                                        className="w-full px-10 py-6 bg-muted/40 border-2 border-transparent rounded-[2.5rem] text-base font-black focus:bg-white focus:border-primary/20 outline-none transition-all"
+                                        value={formData.industry}
+                                        onChange={(e) => setFormData({ ...formData, industry: e.target.value })}
+                                    />
+                                </div>
+
+                                <div className="group">
+                                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground block mb-4 ml-2 opacity-50">Année de création (Founded)</label>
+                                    <input
+                                        type="number"
+                                        className="w-full px-10 py-6 bg-muted/40 border-2 border-transparent rounded-[2.5rem] text-base font-black focus:bg-white focus:border-primary/20 outline-none transition-all"
+                                        value={formData.founded}
+                                        onChange={(e) => setFormData({ ...formData, founded: parseInt(e.target.value) || 0 })}
+                                    />
+                                </div>
+
+                                <div className="group">
+                                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground block mb-4 ml-2 opacity-50">Type de propriété</label>
+                                    <input
+                                        className="w-full px-10 py-6 bg-muted/40 border-2 border-transparent rounded-[2.5rem] text-base font-black focus:bg-white focus:border-primary/20 outline-none transition-all"
+                                        value={formData.type_of_ownership}
+                                        onChange={(e) => setFormData({ ...formData, type_of_ownership: e.target.value })}
+                                    />
+                                </div>
+
+                                <div className="group">
+                                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground block mb-4 ml-2 opacity-50">Note (Rating 0-5)</label>
+                                    <input
+                                        type="number"
+                                        step="0.1"
+                                        className="w-full px-10 py-6 bg-muted/40 border-2 border-transparent rounded-[2.5rem] text-base font-black focus:bg-white focus:border-primary/20 outline-none transition-all"
+                                        value={formData.rating}
+                                        onChange={(e) => setFormData({ ...formData, rating: parseFloat(e.target.value) })}
+                                    />
+                                </div>
+
+                                <div className="group">
+                                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground block mb-4 ml-2 opacity-50">Taille (Size)</label>
+                                    <select 
+                                        className="w-full px-10 py-6 bg-muted/40 border-2 border-transparent rounded-[2.5rem] text-base font-black focus:bg-white focus:border-primary/20 outline-none transition-all appearance-none"
+                                        value={formData.size}
+                                        onChange={(e) => setFormData({ ...formData, size: e.target.value })}
+                                    >
+                                        <option value="1 to 50 employees">1 to 50 employees</option>
+                                        <option value="51 to 200 employees">51 to 200 employees</option>
+                                        <option value="201 to 500 employees">201 to 500 employees</option>
+                                        <option value="501 to 1000 employees">501 to 1000 employees</option>
+                                        <option value="1000+ employees">1000+ employees</option>
+                                    </select>
+                                </div>
+
+                                <div className="group">
+                                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground block mb-4 ml-2 opacity-50">Revenu</label>
+                                    <input
+                                        className="w-full px-10 py-6 bg-muted/40 border-2 border-transparent rounded-[2.5rem] text-base font-black focus:bg-white focus:border-primary/20 outline-none transition-all"
+                                        value={formData.revenue}
+                                        onChange={(e) => setFormData({ ...formData, revenue: e.target.value })}
+                                    />
+                                </div>
+
+                                {/* --- DESCRIPTION --- */}
                                 <div className="md:col-span-2 group">
                                     <label className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground block mb-4 ml-2 opacity-50">Description du poste</label>
                                     <textarea
-                                        className="w-full px-10 py-8 bg-muted/40 border-2 border-transparent rounded-[3.5rem] text-base font-black focus:bg-white focus:border-primary/20 outline-none transition-all h-52 resize-none"
+                                        className="w-full px-10 py-8 bg-muted/40 border-2 border-transparent rounded-[3.5rem] text-base font-black focus:bg-white focus:border-primary/20 outline-none transition-all h-32 resize-none"
                                         value={formData.job_description}
                                         onChange={(e) => setFormData({ ...formData, job_description: e.target.value })}
                                     />
@@ -164,9 +245,9 @@ export default function PredictorPage() {
                             </h3>
                             <div className="space-y-5">
                                 {[
-                                    { label: "Algorithme", value: "Random Forest Regressor", bg: "bg-muted/40" },
-                                    { label: "Dataset", value: "6,482 Profils", bg: "bg-secondary/40" },
-                                    { label: "Précision", value: "94.2%", bg: "bg-accent/40" }
+                                    { label: "Algorithme", value: "RidgeCV", bg: "bg-muted/40" },
+                                    { label: "Dataset", value: "631 Profils", bg: "bg-secondary/40" },
+                                    { label: "Précision", value: "3%", bg: "bg-accent/40" }
                                 ].map((item, idx) => (
                                     <div key={idx} className={cn("flex justify-between items-center px-8 py-5 rounded-3xl border border-border/50", item.bg)}>
                                         <span className="text-foreground font-bold text-xs opacity-60 uppercase tracking-widest">{item.label}</span>

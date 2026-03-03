@@ -12,7 +12,7 @@ import {
     ShieldCheck,
     Zap
 } from 'lucide-react';
-import { cn } from '@/lib/utils';
+
 
 export default function LoginPage() {
     const router = useRouter();
@@ -30,8 +30,13 @@ export default function LoginPage() {
             const res = await api.login({ email, password });
             document.cookie = `token=${res.access_token}; path=/; max-age=86400`;
             router.push('/dashboard');
-        } catch (err: any) {
-            setError(err.message || 'Identifiants incorrects');
+        } catch (err: unknown) {
+            // Check if err is an object with a message property
+            if (err instanceof Error) {
+                setError(err.message || 'Identifiants incorrects');
+            } else {
+                setError('Identifiants incorrects');
+            }
         } finally {
             setLoading(false);
         }

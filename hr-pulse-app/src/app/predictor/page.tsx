@@ -56,7 +56,7 @@ export default function PredictorPage() {
                     </div>
                     <h1 className="text-6xl font-black text-foreground tracking-tight">IA Salary Predictor.</h1>
                     <p className="text-foreground font-bold text-lg max-w-2xl mx-auto opacity-60">
-                        Calculez instantanément la valeur marché d'un poste grâce à notre algorithme optimisé.
+                        Calculez instantanément la valeur marché d&apos;un poste grâce à notre algorithme optimisé.
                     </p>
                 </div>
 
@@ -99,7 +99,7 @@ export default function PredictorPage() {
 
                                 {/* --- SECTION ENTREPRISE --- */}
                                 <div className="group">
-                                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground block mb-4 ml-2 opacity-50">Nom de l'entreprise</label>
+                                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground block mb-4 ml-2 opacity-50">Nom de l&apos;entreprise</label>
                                     <input
                                         className="w-full px-10 py-6 bg-muted/40 border-2 border-transparent rounded-[2.5rem] text-base font-black focus:bg-white focus:border-primary/20 outline-none transition-all"
                                         value={formData.company_name}
@@ -192,7 +192,7 @@ export default function PredictorPage() {
                             ) : (
                                 <>
                                     <Zap className="w-6 h-6 fill-secondary text-secondary" />
-                                    Calculer l'Estimation
+                                    Calculer l&apos;Estimation
                                     <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                                 </>
                             )}
@@ -230,7 +230,7 @@ export default function PredictorPage() {
                                     </div>
                                     <div className="space-y-3">
                                         <p className="font-black text-foreground uppercase tracking-[0.3em] text-sm">Prêt pour Analyse</p>
-                                        <p className="text-foreground font-bold text-base opacity-40">Complétez le profil pour voir l'estimation</p>
+                                        <p className="text-foreground font-bold text-base opacity-40">Complétez le profil pour voir l&apos;estimation</p>
                                     </div>
                                 </div>
                             )}

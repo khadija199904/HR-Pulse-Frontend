@@ -12,7 +12,7 @@ import {
     Database,
     ArrowRight
 } from 'lucide-react';
-import { cn, cleanJobTitle } from '@/lib/utils';
+import { cleanJobTitle } from '@/lib/utils';
 
 export default function JobsDirectoryPage() {
     const [titles, setTitles] = useState<string[]>([]);
@@ -40,7 +40,7 @@ export default function JobsDirectoryPage() {
                     <div className="space-y-4">
                         <h1 className="text-6xl font-black text-foreground tracking-tighter">Répertoire.</h1>
                         <p className="text-foreground font-bold text-xl max-w-xl opacity-60 leading-relaxed">
-                            Explorez l'intégralité des intitulés de postes indexés par notre moteur d'IA Azure SQL.
+                            Explorez l&apos;intégralité des intitulés de postes indexés par notre moteur d&apos;IA Azure SQL.
                         </p>
                     </div>
                     <div className="bg-secondary px-10 py-6 rounded-[3rem] flex items-center gap-6 border-2 border-white shadow-xl shadow-secondary/20 group hover:scale-[1.05] transition-transform duration-500">

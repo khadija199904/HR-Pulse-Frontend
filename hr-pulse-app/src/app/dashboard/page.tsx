@@ -6,7 +6,6 @@ import { api } from '@/services/api';
 import {
     Users,
     Briefcase,
-    TrendingUp,
     Activity,
     ArrowUpRight,
     Loader2,

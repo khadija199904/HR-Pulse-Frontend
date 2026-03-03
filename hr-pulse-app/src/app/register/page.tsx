@@ -34,8 +34,12 @@ export default function RegisterPage() {
             await api.register(formData);
             setSuccess(true);
             setTimeout(() => router.push('/login'), 2000);
-        } catch (err: any) {
-            setError(err.message || 'Erreur lors de la création du compte');
+        } catch (err: unknown) {
+            if (err instanceof Error) {
+                setError(err.message || "Une erreur est survenue lors de l'inscription");
+            } else {
+                setError("Une erreur est survenue");
+            }
         } finally {
             setLoading(false);
         }
@@ -56,7 +60,7 @@ export default function RegisterPage() {
                             <Sparkles className="w-10 h-10 text-primary" />
                         </div>
                         <h1 className="text-4xl font-black text-foreground tracking-tighter">Inscription.</h1>
-                        <p className="text-foreground font-bold opacity-40 text-sm italic">Rejoignez l'écosystème HR-Pulse Intelligence</p>
+                        <p className="text-foreground font-bold opacity-40 text-sm italic">Rejoignez l&apos;écosystème HR-Pulse Intelligence</p>
                     </div>
 
                     {success ? (

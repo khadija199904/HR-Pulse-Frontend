@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
 import AppLayout from '@/components/layout/AppLayout';
 import { Skeleton } from '@/components/ui/skeleton';
 

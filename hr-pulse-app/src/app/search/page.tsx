@@ -8,10 +8,9 @@ import {
     Briefcase,
     Loader2,
     ChevronRight,
-    Filter,
     Sparkles
 } from 'lucide-react';
-import { cn, cleanJobTitle } from '@/lib/utils';
+import { cleanJobTitle } from '@/lib/utils';
 
 interface Job {
     id: number;
@@ -104,7 +103,7 @@ export default function SearchPage() {
                             <div className="w-24 h-24 bg-secondary rounded-full flex items-center justify-center mx-auto shadow-sm">
                                 <SearchIcon className="w-10 h-10 text-primary opacity-30" />
                             </div>
-                            <p className="text-xl font-black text-foreground tracking-tight">Aucun résultat trouvé pour "{query}"</p>
+                            <p className="text-xl font-black text-foreground tracking-tight">Aucun résultat trouvé pour &quot;{query}&quot;</p>
                         </div>
                     )}
                 </div>

@@ -14,7 +14,7 @@ export default function Navbar() {
             <div className="flex items-center gap-3">
                 <div className="w-1.5 h-6 bg-primary rounded-full" />
                 <div className="text-[11px] font-black text-foreground uppercase tracking-[0.3em] opacity-40">
-                    Système d'Analyse RH Propriétaire
+                    Système d&apos;Analyse RH Propriétaire
                 </div>
             </div>
 

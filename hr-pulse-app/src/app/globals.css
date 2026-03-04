@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #000000;
+
+  --color-card: #ffffff;
+  --color-card-foreground: #000000;
+
+  --color-popover: #ffffff;
+  --color-popover-foreground: #000000;
+
+  /* Palette by USER: A82323 (Red), FEFFD3 (Yellow), BCD9A2 (Green) */
+  --color-primary: #A82323;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #FEFFD3;
+  --color-secondary-foreground: #000000;
+
+  --color-accent: #BCD9A2;
+  --color-accent-foreground: #000000;
+
+  --color-muted: #f8fafc;
+  --color-muted-foreground: #475569;
+
+  --color-destructive: #A82323;
+  --color-destructive-foreground: #ffffff;
+
+  --color-border: #e2e8f0;
+  --color-input: #e2e8f0;
+  --color-ring: #A82323;
+
+  --radius-xl: 1rem;
+  --radius-lg: 0.75rem;
+  --radius-md: 0.5rem;
+  --radius-sm: 0.25rem;
+}
+
+@layer base {
+
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-border, currentColor);
+  }
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.soft-shadow {
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05), 0 1px 2px -1px rgb(0 0 0 / 0.05);
+}
+
+.premium-shadow {
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.03);
+}
+
+/* Specific palette classes */
+.bg-red-pulse {
+  background-color: #A82323;
+}
+
+.bg-yellow-pulse {
+  background-color: #FEFFD3;
+}
+
+.bg-green-pulse {
+  background-color: #BCD9A2;
+}
+
+.text-black-pulse {
+  color: #000000;
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+}

@@ -8,7 +8,7 @@ on:
 
 jobs:
   test-and-build-check:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: hr-pulse-app
